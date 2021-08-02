@@ -1,6 +1,6 @@
 import React from 'react';
 import MainView from '../MainView/MainView';
-import DetailsView from '../DetailsView/DetailsView';
+// import DetailsView from '../DetailsView/DetailsView';
 
 function App() {
   return (

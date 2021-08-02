@@ -1,26 +1,30 @@
-.list {
+.stories-list {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
   width: 90%;
-  height: 90%;
+  height: auto;
+  padding: 1%;
   border: 1px solid green;
 }
 
-.item-container {
+.story-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  width: 25%;
+  justify-content: space-around;
+  text-align: center;
+  width: 41%;
   margin: 2%;
+  padding: 2%;
   border: 1px solid blueviolet;
 }
 
-// .item-name {
+.story-title {
+  font-size: 1.5em;
+}
 
-// }
-
-// .item-text {
-
-// }
+.story-abstract {
+  margin-top: 0.75em;
+  font-size: 1.2em;
+}
