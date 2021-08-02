@@ -14,10 +14,14 @@ const List = ({ stories }) => {
   const buildStoryCards = () => {
     const cards = stories.map(story => {
       return (
-        <div className='story-box' key={story.id}>
-          <span className='story-title'>{story.title}</span>
-          <p className='story-abstract'>{story.abstract}</p>
-        </div>
+        <article className='story-box' key={story.id}>
+          <div className='story-title'>
+            <span>{story.title}</span>
+          </div>
+          <div className='story-abstract'>
+            <p>{story.abstract}</p>
+          </div>
+        </article>
       )
     });
     console.log(cards);
@@ -27,7 +31,10 @@ const List = ({ stories }) => {
   }
 
   return (
-    <section className='stories-list'>
+    <section className='top-stories-list'>
+      <div className='top-stories-title'>
+        <h2>Top Stories in Politics</h2>
+      </div>
       {!storyCards && <p className='loading'>Loading...</p>}
       {storyCards}
     </section>
