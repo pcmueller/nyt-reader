@@ -5,7 +5,7 @@ function App() {
   return (
     <div className='app'>
       <header className='app-header'>
-        NYT Reader
+        NYT READER
       </header>
       <MainView />
     </div>
