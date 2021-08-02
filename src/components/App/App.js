@@ -1,12 +1,13 @@
+import React from 'react';
+import MainView from '../MainView/MainView';
+
 function App() {
   return (
     <div className='app'>
       <header className='app-header'>
         NYT Reader
       </header>
-      <main className='main-view'>
-
-      </main>
+      <MainView />
     </div>
   );
 }
