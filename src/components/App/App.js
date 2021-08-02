@@ -14,8 +14,8 @@ function App() {
           <button>RETURN HOME</button>
         </nav>
       </header>
-      {/* <MainView /> */}
-      <DetailsView />
+      <MainView />
+      {/* <DetailsView /> */}
     </div>
   );
 }
