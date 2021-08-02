@@ -1,0 +1,26 @@
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 90%;
+  height: 90%;
+  border: 1px solid green;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 25%;
+  margin: 2%;
+  border: 1px solid blueviolet;
+}
+
+// .item-name {
+
+// }
+
+// .item-text {
+
+// }

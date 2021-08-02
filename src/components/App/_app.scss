@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.app-header {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  width: 100%;
+  height: 20%;
+  min-height: 5em;
+  border: 1px solid black;
+  background-color: gray;
+  font-size: 2.5em;
+}
+
+.app-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.app-title {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.home-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  button {
+    width: 70%;
+    height: 20%;
+    margin: auto 13% 10% auto;
+  }
+}
