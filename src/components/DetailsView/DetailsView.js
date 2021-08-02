@@ -4,9 +4,7 @@ import Article from '../Article/Article';
 const DetailsView = () => {
   return (
     <main className='details-page'>
-      <section className='article-container'>
-        <Article />
-      </section>
+      <Article />
     </main>
   )
 }
