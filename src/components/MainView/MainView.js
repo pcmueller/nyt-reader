@@ -1,42 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import List from '../List/List';
-import { fetchAllStories } from '../../utils/apiCalls';
 
-const MainView = ({ topStories, setTopStories, setSelectedID }) => {
-
-  const section = 'politics';
-
-  useEffect(() => {
-    if (!topStories) {
-      getTopStories();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const getTopStories = () => {
-    fetchAllStories(section)
-      .then(data => {
-        filterStories(data.results);
-      })
-      .catch(error => {
-        console.log(error);
-    })
-  }
-  
-  const filterStories = (results) => {
-    const stories = [];
-    for (let i = 0; i < 12; i++) {
-      const story = {
-        id: i,
-        title: results[i].title,
-        abstract: results[i].abstract,
-        published_date: results[i].published_date,
-        image: results[i].multimedia[1].url
-      }
-      stories.push(story);
-    }
-    setTopStories(stories);
-  }
+const MainView = ({ topStories, setSelectedID }) => {
 
   return (
     <main className='main-page'>
