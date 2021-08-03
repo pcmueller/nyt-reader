@@ -35,7 +35,6 @@ const App = () => {
     fetchAllStories(section)
       .then(data => {
         if (data.results) {
-          console.log(data.results);
           filterStories(data.results);
         }
       })

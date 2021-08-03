@@ -63,7 +63,7 @@ const List = ({ section, stories, setSelectedID }) => {
 
   return (
     <section className='top-stories-list'>
-      <div className='top-stories-title'>
+      <div className='list-heading'>
         <h2>Top Stories in {sectionTitle}</h2>
       </div>
       {storyCards}

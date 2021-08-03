@@ -7,7 +7,7 @@ html,
 body,
 #root {
   height: 100%;
-  background-color: rgb(247, 250, 255);
+  background-color: $primary-background;
 }
 
 .app {
@@ -25,9 +25,9 @@ body,
   height: 20%;
   min-height: 4.5em;
   margin-top: 1em;
-  background-color: rgba(250, 250, 229, 0.522);
+  background-color: $secondary-background;
   box-shadow: 1px 1px 1px 1px rgba(48, 35, 35, 0.255),
-  2px 3px 2px 3px rgba(38, 34, 34, 0.385);
+  3px 3px 3px 3px rgba(87, 74, 74, 0.385);
   font-size: 2.2em;
   border-radius: 2px;
 }
@@ -73,7 +73,8 @@ body,
 
 @media screen and (max-width: 376px) {
   .app-header {
-    font-size: 1em;
+    margin-top: 2em;
+    font-size: 0.9em;
     min-height: 6em;
     width: 90%;
   }
