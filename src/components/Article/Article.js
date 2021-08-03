@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
+import months from '../../assets/months';
 const Article = ({ id, setSelectedID, story }) => {
 
   const [ tags, setTags ] = useState([]);
+  const [ published, setPublished ] = useState([]);
+  const [ updated, setUpdated ] = useState([]);
 
   useEffect(() => {
     if (id && !story) {
@@ -13,20 +15,34 @@ const Article = ({ id, setSelectedID, story }) => {
 
   useEffect(() => {
     if (story) {
+      formatDates(setPublished, story.published_date);
+      formatDates(setUpdated, story.updated_date);
       splitTags();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [story]);
 
+  const formatDates = (setDate, fullDate) => {
+    const [date, ] = fullDate.split('T');
+    const [ y, m, d ] = date.split('-');
+    const [ , monthNum] = m.split('0');
+    const [ , dayNum] = d.split('0');
+    const formatted = `${months[monthNum]} ${dayNum}, ${y}`;
+
+    setDate(formatted);
+  };
+
   const splitTags = () => {
     const elements = [];
 
-    story.topics.forEach(topic => {
-      elements.push(<h4 className='topic'>{topic}</h4>);
+    story.topics.forEach(elem => {
+      const index = story.topics.indexOf(elem) + 100;
+      elements.push(<span className='topic' key={index}>{elem}</span>);
     });
 
-    story.locations.map(location => {
-      elements.push(<h4 className='location'>{location}</h4>);
+    story.locations.forEach(elem => {
+      const index = story.locations.indexOf(elem) + 200;
+      elements.push(<span className='location' key={index}>{elem}</span>);
     });
 
     setTags(elements);
@@ -37,7 +53,7 @@ const Article = ({ id, setSelectedID, story }) => {
   } else {
     return (
       <article className='article-container'>
-        <a className='article-title' href={story.url} alt='article link'>
+        <a className='article-headline' href={story.url} alt='article link'>
           <span>{story.title}</span>
         </a>
         <section className='article-details'>
@@ -47,8 +63,14 @@ const Article = ({ id, setSelectedID, story }) => {
           </div>
           <span className='byline'>{story.byline}</span>
           <div className='date-section'>
-            <span className='pub-date'>Published: {story.published_date}</span>
-            <span className='updated'>Updated: {story.updated_date}</span>
+            <div className='date-box'>
+              <span>Published: </span>
+              <span className='pub-date'>{published}</span>
+            </div>
+            <div className='date-box'>
+              <span>Updated: </span>
+              <span className='updated'>{updated}</span>
+            </div>
           </div>
         </section>
         <p className='article-abstract'>{story.abstract}</p>

@@ -6,11 +6,10 @@ import DetailsView from '../DetailsView/DetailsView';
 
 const App = () => {
 
+  const [ section, setSection ] = useState('us');
   const [ topStories, setTopStories ] = useState(null);
   const [ selectedID, setSelectedID ] = useState(-1);
   const [ selectedStory, setSelectedStory ] = useState(null);
-
-  const section = 'politics';
 
   useEffect(() => {
     if (!topStories) {
@@ -18,6 +17,11 @@ const App = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    getTopStories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [section]);
 
   
   useEffect(() => {
@@ -30,7 +34,10 @@ const App = () => {
   const getTopStories = () => {
     fetchAllStories(section)
       .then(data => {
-        filterStories(data.results);
+        if (data.results) {
+          console.log(data.results);
+          filterStories(data.results);
+        }
       })
       .catch(error => {
         console.log(error);
@@ -85,7 +92,9 @@ const App = () => {
           </div>
         </header>
         <Route exact path='/'>
-          <MainView 
+          <MainView
+            section={section}
+            setSection={setSection}
             topStories={topStories}
             setTopStories={setTopStories}
             setSelectedID={setSelectedID}

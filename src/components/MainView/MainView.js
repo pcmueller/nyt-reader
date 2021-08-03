@@ -1,14 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import List from '../List/List';
+import nytSections from '../../assets/nytSections';
 
-const MainView = ({ topStories, setSelectedID }) => {
+const MainView = ({ section, setSection, topStories, setSelectedID }) => {
+
+  const [ options, setOptions ] = useState([]);
+
+  useEffect(() => {
+    const elements = nytSections.map(elem => {
+    return (
+      <option 
+        className='section-option' 
+        label={elem[1]}
+        key={elem[0]}
+        value={elem[0]}>
+      </option>)
+    });
+    if (elements.length === nytSections.length) {
+      setOptions(elements);
+    }
+  }, []);
+
+  const handleSelect = (e) => {
+    const selection = e.target.value;
+    setSection(selection);
+  }
 
   return (
     <main className='main-page'>
-      <nav className='nav-bar'>search or filtering here</nav>
+      <nav className='nav-bar'>
+      <label htmlFor='dropdown'>FILTER BY SECTION</label>
+      <div className='select'>
+        <select
+          id='dropdown'
+          className='dropdown'
+          defaultValue='0'
+          onChange={handleSelect}>
+            <option value='0' disabled >Select section...</option>
+            {options}
+        </select>
+        <span className='focus'></span>
+      </div>
+      </nav>
       <section className='stories-container'>
         {!topStories && <p className='loading'>Loading...</p>}
-        {topStories && <List stories={topStories} setSelectedID={setSelectedID} />}
+        {topStories && <List section={section} stories={topStories} setSelectedID={setSelectedID} />}
       </section>
     </main>
   )
