@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 
-const Article = ({ story }) => {
+const Article = ({ id, setSelectedID, story }) => {
 
   useEffect(() => {
-    if (story) {
-      // console.log(story);
+    if (id && !story) {
+      setSelectedID(id);
     }
-  }, [story]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (!story) {
     return <p className='loading'>Loading...</p>;

@@ -1,11 +1,11 @@
 import React from 'react';
 import Article from '../Article/Article';
 
-const DetailsView = ({ story }) => {
+const DetailsView = ({ id, setSelectedID, story }) => {
   return (
     <main className='details-page'>
       {!story && <p className='loading'>Loading...</p>}
-      <Article story={story} />
+      <Article id={id} setSelectedID={setSelectedID} story={story} />
     </main>
   )
 }
