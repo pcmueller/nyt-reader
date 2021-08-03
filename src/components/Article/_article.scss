@@ -37,7 +37,7 @@
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
-  width: 75%;
+  width: 55%;
   padding: 2% 2% 2% 2%;
   margin: 4%;
   background-color: rgba(146, 191, 212, 0.308);
@@ -65,7 +65,7 @@
 .date-section {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   width: 95%;
   font-size: 1.3em;
@@ -85,7 +85,7 @@
   justify-content: space-evenly;
   align-items: center;
   width: auto;
-  max-width: 60%;
+  max-width: 70%;
   height: 35%;
   padding: 1%;
   margin-top: 2%;
@@ -114,11 +114,11 @@
 }
 
 .topic {
-  background-color: rgba(252, 238, 215, 0.878);
+  background-color: rgba(252, 222, 215, 0.878);
 }
 
 .location {
-  background-color: rgba(208, 248, 170, 0.856);
+  background-color: rgba(204, 250, 236, 0.856);
 }
 
 @media screen and (max-width: 769px) {
