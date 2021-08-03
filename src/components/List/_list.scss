@@ -18,8 +18,7 @@
   letter-spacing: 2px;
   color: $secondary-background;
   text-shadow: 3px 4px 4px rgba(38, 34, 34, 0.57);
-  font-family: 'Playfair Display SC',
-  serif;
+  font-family: $playfair;
 }
 
 .story-box {
@@ -41,8 +40,7 @@
   font-weight: 500;
   text-decoration: none;
   color: black;
-  font-family: 'Playfair Display SC',
-  serif;
+  font-family: $playfair;
 
   span {
     width: 95%;
@@ -75,7 +73,7 @@
 
   .list-heading {
     margin-bottom: 0.4em;
-    font-size: 1.6em;
+    font-size: 1.7em;
   }
 
   .story-box {
@@ -94,7 +92,7 @@
 
 @media screen and (max-width: 376px) {
   .list-heading {
-    font-size: 1em;
+    font-size: 0.8em;
     margin-bottom: 0.1em;
   }
 

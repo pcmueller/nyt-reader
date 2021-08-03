@@ -45,9 +45,9 @@ body,
 
 .app-title {
   color: rgba(64, 77, 112, 0.849);
-  font-family: 'Playfair Display SC', serif;
   text-shadow: 2px 2px 3px rgb(71, 61, 61);
   letter-spacing: 20px;
+  font-family: $playfair;
 }
 
 .loading-box {

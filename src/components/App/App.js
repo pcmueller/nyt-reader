@@ -58,7 +58,7 @@ const App = () => {
           topics: results[i]?.des_facet,
           section: results[i]?.section,
           subsection: results[i]?.subsection,
-          image: results[i]?.multimedia[1].url
+          image: results[i]?.multimedia[0].url
         }
         if (story.title) {
           stories.push(story);
