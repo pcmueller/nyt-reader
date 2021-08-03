@@ -53,7 +53,7 @@ const Article = ({ id, setSelectedID, story }) => {
   } else {
     return (
       <article className='article-container'>
-        <a className='article-title' href={story.url} alt='article link'>
+        <a className='article-headline' href={story.url} alt='article link'>
           <span>{story.title}</span>
         </a>
         <section className='article-details'>
@@ -63,8 +63,14 @@ const Article = ({ id, setSelectedID, story }) => {
           </div>
           <span className='byline'>{story.byline}</span>
           <div className='date-section'>
-            <span className='pub-date'>Published: {published}</span>
-            <span className='updated'>Updated: {updated}</span>
+            <div className='date-box'>
+              <span>Published: </span>
+              <span className='pub-date'>{published}</span>
+            </div>
+            <div className='date-box'>
+              <span>Updated: </span>
+              <span className='updated'>{updated}</span>
+            </div>
           </div>
         </section>
         <p className='article-abstract'>{story.abstract}</p>
