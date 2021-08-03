@@ -6,16 +6,20 @@ import DetailsView from '../DetailsView/DetailsView';
 
 const App = () => {
 
-  const [ section, setSection ] = useState('politics');
+  const [ section, setSection ] = useState('us');
   const [ topStories, setTopStories ] = useState(null);
   const [ selectedID, setSelectedID ] = useState(-1);
   const [ selectedStory, setSelectedStory ] = useState(null);
 
   useEffect(() => {
+    if (!topStories) {
+      getTopStories();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     getTopStories();
-    // if (!topStories) {
-    // }
-    // console.log(section);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [section]);
 
@@ -31,6 +35,7 @@ const App = () => {
     fetchAllStories(section)
       .then(data => {
         if (data.results) {
+          console.log(data.results);
           filterStories(data.results);
         }
       })
