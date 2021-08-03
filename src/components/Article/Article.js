@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Article = ({ id, setSelectedID, story }) => {
 
   const [ tags, setTags ] = useState([]);
+  const [ dates, setDates ] = useState([]);
 
   useEffect(() => {
     if (id && !story) {
@@ -13,20 +14,28 @@ const Article = ({ id, setSelectedID, story }) => {
 
   useEffect(() => {
     if (story) {
+      formatDates();
       splitTags();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [story]);
 
+  const formatDates = () => {
+    // const [pubdate, ] = story.split('T');
+    // console.log(pubdate);
+  };
+
   const splitTags = () => {
     const elements = [];
 
-    story.topics.forEach(topic => {
-      elements.push(<h4 className='topic'>{topic}</h4>);
+    story.topics.forEach(elem => {
+      const index = story.topics.indexOf(elem) + 100;
+      elements.push(<span className='topic' key={index}>{elem}</span>);
     });
 
-    story.locations.map(location => {
-      elements.push(<h4 className='location'>{location}</h4>);
+    story.locations.map(elem => {
+      const index = story.locations.indexOf(elem) + 200;
+      elements.push(<span className='location' key={index}>{elem}</span>);
     });
 
     setTags(elements);
