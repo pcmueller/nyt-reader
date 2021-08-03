@@ -29,13 +29,18 @@ const MainView = ({ section, setSection, topStories, setSelectedID }) => {
   return (
     <main className='main-page'>
       <nav className='nav-bar'>
-      <select
-        className='dropdown'
-        defaultValue="0"
-        onChange={handleSelect}>
-          <option value="0" disabled >Select section...</option>
-          {options}
-      </select>
+      <label htmlFor='dropdown'>SECTION</label>
+      <div className='select'>
+        <select
+          id='dropdown'
+          className='dropdown'
+          defaultValue='0'
+          onChange={handleSelect}>
+            <option value='0' disabled >Select section...</option>
+            {options}
+        </select>
+        <span className='focus'></span>
+      </div>
       </nav>
       <section className='stories-container'>
         {!topStories && <p className='loading'>Loading...</p>}
