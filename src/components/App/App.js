@@ -79,11 +79,10 @@ const App = () => {
         <header className='app-header'>
           <div></div>
           <div className='app-title-container'>
-            <h1 className='app-title'>NYT READER</h1>
+            <NavLink to='/' className='home-link'>
+              <h1 className='app-title'>NYT READER</h1>
+            </NavLink>
           </div>
-          <NavLink to='/' className='home-btn-container'>
-            <button>RETURN HOME</button>
-          </NavLink>
         </header>
         <Route exact path='/'>
           <MainView 

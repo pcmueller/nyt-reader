@@ -19,8 +19,9 @@ body,
 }
 
 .app-header {
-  display: grid;
-  grid-template-columns: 15% 70% 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 86%;
   height: 20%;
   min-height: 4.5em;
@@ -28,15 +29,18 @@ body,
   background-color: ghostwhite;
   box-shadow: 1px 1px 1px 1px rgba(48, 35, 35, 0.255),
   1px 2px 2px 2px rgba(38, 34, 34, 0.385);
-  font-size: 2.5em;
+  font-size: 2.2em;
 }
 
 .app-title-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+.home-link {
+  text-decoration: none;
 }
 
 .app-title {
@@ -44,22 +48,6 @@ body,
   font-family: 'Playfair Display SC', serif;
   text-shadow: 2px 2px 3px rgb(71, 61, 61);
   letter-spacing: 10px;
-}
-
-.home-btn-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-  text-decoration: none;
-  padding: 3%;
-
-  button {
-    width: 80%;
-    height: 25%;
-    margin: auto 13% 10% auto;
-    font-size: 0.3em;
-  }
 }
 
 @media screen and (max-width: 769px) {
