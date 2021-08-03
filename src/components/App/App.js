@@ -45,6 +45,13 @@ const App = () => {
         title: results[i].title,
         abstract: results[i].abstract,
         published_date: results[i].published_date,
+        updated_date: results[i].updated_date,
+        url: results[i].url,
+        byline: results[i].byline,
+        locations: results[i].geo_facet,
+        topics: results[i].des_facet,
+        section: results[i].section,
+        subsection: results[i].subsection,
         image: results[i].multimedia[1].url
       }
       stories.push(story);
