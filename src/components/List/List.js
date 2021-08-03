@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
-const List = ({ stories }) => {
+const List = ({ stories, setSelectedID }) => {
 
   const [ storyCards, setStoryCards ] = useState([]);
 
@@ -11,20 +12,24 @@ const List = ({ stories }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleClick = (e) => {
+    setSelectedID(parseInt(e.target.id));
+  }
+
   const buildStoryCards = () => {
     const cards = stories.map(story => {
       return (
-        <article className='story-box' key={story.id}>
-          <div className='story-title'>
-            <span>{story.title}</span>
-          </div>
+        <article className='story-box' key={story.id} >
+          <NavLink to={`/article/${story.id}`} className='article-link'>
+              <span id={story.id} onClick={(e)=>handleClick(e)}>{story.title}</span>
+          </NavLink>
           <div className='story-abstract'>
             <p>{story.abstract}</p>
           </div>
         </article>
       )
     });
-    console.log(cards);
+    
     if (cards.length === stories.length) {
       setStoryCards(cards);
     }

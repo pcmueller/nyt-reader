@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import List from '../List/List';
 import { fetchAllStories } from '../../utils/apiCalls';
 
-const MainView = () => {
-
-  const [ topStories, setTopStories ] = useState(null);
+const MainView = ({ topStories, setTopStories, setSelectedID }) => {
 
   const section = 'politics';
 
@@ -45,7 +43,7 @@ const MainView = () => {
       <nav className='nav-bar'>search or filtering here</nav>
       <section className='stories-container'>
         {!topStories && <p className='loading'>Loading...</p>}
-        {topStories && <List stories={topStories} />}
+        {topStories && <List stories={topStories} setSelectedID={setSelectedID} />}
       </section>
     </main>
   )
