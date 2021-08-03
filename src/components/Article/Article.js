@@ -56,6 +56,11 @@ const Article = ({ id, setSelectedID, story }) => {
         <a className='article-headline' href={story.url} alt='article link'>
           <span>{story.title}</span>
         </a>
+        {story.image && 
+        <div className='pic-container'>
+          <img className='article-pic' src={story.image} alt='article'></img>
+        </div>
+        }
         <section className='article-details'>
           <div className='nyt-sections'>
             <span className='nyt-section'>{story.section}</span>
@@ -72,11 +77,11 @@ const Article = ({ id, setSelectedID, story }) => {
               <span className='updated'>{updated}</span>
             </div>
           </div>
+          <p className='article-abstract'>{story.abstract}</p>
+          <div className='tags-section'>
+            <p className='tags'>{tags}</p>
+          </div>
         </section>
-        <p className='article-abstract'>{story.abstract}</p>
-        <div className='tags-section'>
-          <p className='tags'>{tags}</p>
-        </div>
       </article>
     )
   }

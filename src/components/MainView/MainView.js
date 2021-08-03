@@ -29,7 +29,7 @@ const MainView = ({ section, setSection, topStories, setSelectedID }) => {
   return (
     <main className='main-page'>
       <nav className='nav-bar'>
-      <label htmlFor='dropdown'>FILTER BY SECTION</label>
+      <label htmlFor='dropdown'>FILTER ARTICLES</label>
       <div className='select'>
         <select
           id='dropdown'

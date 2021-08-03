@@ -3,13 +3,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width: 80%;
-  min-height: 20em;
-  margin-top: 6%;
+  width: 85%;
+  min-height: 35em;
+  margin-top: 4%;
   margin-bottom: 1%;
-  padding: 3%;
+  padding: 3% 3% 1% 3%;
   border: 1px solid black;
-  background-color: ghostwhite;
+  background-color: $secondary-background;
 }
 
 .article-headline {
@@ -21,8 +21,7 @@
   letter-spacing: 0.5px;
   text-decoration: none;
   color: black;
-  font-family: 'Playfair Display SC',
-  serif;
+  font-family: $playfair;
 
   span {
     width: 95%;
@@ -34,18 +33,34 @@
   }
 }
 
+.pic-container {
+  width: 40%;
+  height: auto;
+  margin-top: 2em;
+}
+
+.article-pic {
+  width: 100%;
+  height: 100%;
+}
+
 .article-details {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
-  width: 55%;
-  padding: 2% 2% 2% 2%;
-  margin: 4%;
-  background-color: rgba(250, 250, 229, 0.522);
+  width: 75%;
+  padding: 3% 2% 2% 2%;
+  margin-top: 4%;
+  margin-bottom: 2%;
+  background-color: $emphasis-background;
   box-shadow: 1px 1px 1px 1px rgba(48, 35, 35, 0.255),
   1px 2px 2px 2px rgba(38, 34, 34, 0.385);
+  font-family: Arial,
+  Helvetica,
+  sans-serif;
+
 }
 
 .nyt-sections {
@@ -53,10 +68,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 95%;
   text-transform: uppercase;
   font-size: 1.2em;
   font-weight: 600;
+  margin-top: 2%;
 }
 
 .byline {
@@ -77,8 +93,9 @@
 .article-abstract {
   width: 85%;
   font-size: 1.6em;
-  line-height: 1.5;
+  line-height: 1.25;
   text-align: center;
+  margin: 1.5em auto 1.5em auto;
 }
 
 .tags-section {
@@ -90,9 +107,9 @@
   max-width: 70%;
   height: 35%;
   padding: 1%;
-  margin-top: 1.5em;
-  font-size: 1em;
+  margin-bottom: 1.5em;
   border: 1px solid black;
+  font-size: 1em;
 }
 
 .tags {
@@ -113,7 +130,7 @@
 }
 
 .topic {
-  background-color: rgba(215, 246, 252, 0.878);
+  background-color: rgba(173, 247, 239, 0.851);
 }
 
 .location {
@@ -122,22 +139,24 @@
 
 @media screen and (max-width: 769px) {
   .article-container {
-    margin-top: 10%;
+    margin-top: 5%;
     min-height: 43em;
+    padding: 3%;
+    width: 85%;
   }
 
   .article-headline {
-    font-size: 1.6em;
+    font-size: 1.4em;
     width: 95%;
   }
 
   .article-details {
     width: 90%;
-    margin-bottom: 6%;
+    margin-bottom: 3%;
   }
 
   .nyt-sections {
-    width: 80%;
+    width: 90%;
   }
 
   .date-section {
@@ -151,40 +170,51 @@
 
   .tags-section {
     max-width: 85%;
-    margin-top: 5%;
+    font-size: 1em;
   }
 }
 
 @media screen and (max-width: 376px) {
   .article-container {
-    margin-top: 7%;
-    min-height: 20em;
+    margin-top: 5%;
+    min-height: 25em;
     width: 90%;
   }
 
   .article-headline {
-    font-size: 1.2em;
+    font-size: 1.1em;
+  }
+
+  .pic-container {
+    width: 50%;
+    height: auto;
+    margin-top: 1em;
+  }
+
+  .article-pic {
+    width: 100%;
+    height: 100%;
   }
 
   .article-details {
     width: 95%;
     margin-top: 6%;
-    margin-bottom: 6%;
+    margin-bottom: 3%;
   }
 
   .nyt-sections {
-    width: 80%;
-    font-size: 0.9em;
+    width: 90%;
+    font-size: 0.7em;
   }
 
   .byline {
-    font-size: 1.1em;
+    font-size: 0.8em;
     font-style: italic;
     margin: 0.3em auto 0.8em auto;
   }
 
   .date-section {
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
 
   .date-box {
@@ -195,13 +225,13 @@
   }
 
   .article-abstract {
-    font-size: 1em;
+    font-size: 0.8em;
     width: 90%;
   }
 
   .tags-section {
     max-width: 95%;
     padding: 0.7em;
-    font-size: 0.8em;
+    font-size: 0.6em;
   }
 }
