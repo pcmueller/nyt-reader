@@ -1,0 +1,30 @@
+const nytSections = [
+  ['arts', 'Arts' ],
+  ['automobiles', 'Automobiles'],
+  ['books', 'Books'],
+  ['business', 'Business'],
+  ['fashion', 'Fashion'],
+  ['food', 'Food'],
+  ['health', 'Health'],
+  ['home', 'Home'],
+  ['insider', 'Insider'],
+  ['magazine', 'Magazine'],
+  ['movies', 'Movies'],
+  ['nyregion', 'NY Region'],
+  ['obituaries', 'Obituaries'],
+  ['opinion', 'Opinion'],
+  ['politics', 'Politics'],
+  ['realestate', 'Real Estate'],
+  ['science', 'Science'],
+  ['sports', 'Sports'],
+  ['sundayreview', 'Sunday Review'],
+  ['technology', 'Technology'],
+  ['theater', 'Theater'],
+  ['t-magazine', 'T-Magazine'],
+  ['travel', 'Travel'],
+  ['upshot', 'Upshot'],
+  ['us', 'US'],
+  ['world', 'World']
+];
+
+export default nytSections;

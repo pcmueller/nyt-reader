@@ -50,6 +50,20 @@ body,
   letter-spacing: 10px;
 }
 
+.loading-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+}
+
+.loading {
+  font-size: 1.5em;
+  margin: 5%;
+}
+
 @media screen and (max-width: 769px) {
   .app-header {
     font-size: 1.5em;
