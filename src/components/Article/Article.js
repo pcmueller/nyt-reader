@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
+import months from '../../assets/months';
 const Article = ({ id, setSelectedID, story }) => {
 
   const [ tags, setTags ] = useState([]);
-  const [ dates, setDates ] = useState([]);
+  const [ published, setPublished ] = useState([]);
+  const [ updated, setUpdated ] = useState([]);
 
   useEffect(() => {
     if (id && !story) {
@@ -14,15 +15,21 @@ const Article = ({ id, setSelectedID, story }) => {
 
   useEffect(() => {
     if (story) {
-      formatDates();
+      formatDates(setPublished, story.published_date);
+      formatDates(setUpdated, story.updated_date);
       splitTags();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [story]);
 
-  const formatDates = () => {
-    // const [pubdate, ] = story.split('T');
-    // console.log(pubdate);
+  const formatDates = (setDate, fullDate) => {
+    const [date, ] = fullDate.split('T');
+    const [ y, m, d ] = date.split('-');
+    const [ , monthNum] = m.split('0');
+    const [ , dayNum] = d.split('0');
+    const formatted = `${months[monthNum]} ${dayNum}, ${y}`;
+
+    setDate(formatted);
   };
 
   const splitTags = () => {
@@ -33,7 +40,7 @@ const Article = ({ id, setSelectedID, story }) => {
       elements.push(<span className='topic' key={index}>{elem}</span>);
     });
 
-    story.locations.map(elem => {
+    story.locations.forEach(elem => {
       const index = story.locations.indexOf(elem) + 200;
       elements.push(<span className='location' key={index}>{elem}</span>);
     });
@@ -56,8 +63,8 @@ const Article = ({ id, setSelectedID, story }) => {
           </div>
           <span className='byline'>{story.byline}</span>
           <div className='date-section'>
-            <span className='pub-date'>Published: {story.published_date}</span>
-            <span className='updated'>Updated: {story.updated_date}</span>
+            <span className='pub-date'>Published: {published}</span>
+            <span className='updated'>Updated: {updated}</span>
           </div>
         </section>
         <p className='article-abstract'>{story.abstract}</p>
