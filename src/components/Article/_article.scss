@@ -78,7 +78,7 @@
 .byline {
   font-size: 1.4em;
   font-style: italic;
-  margin: 0.3em auto 0.8em auto;
+  margin: 1em auto 1.5em auto;
 }
 
 .date-section {
@@ -91,11 +91,11 @@
 }
 
 .article-abstract {
-  width: 85%;
-  font-size: 1.6em;
+  width: 90%;
+  font-size: 1.4em;
   line-height: 1.25;
   text-align: center;
-  margin: 1.5em auto 1.5em auto;
+  margin: 1.75em auto 1.75em auto;
 }
 
 .tags-section {
@@ -108,7 +108,7 @@
   height: 35%;
   padding: 1%;
   margin-bottom: 1.5em;
-  border: 1px solid black;
+  border: 0.5px solid black;
   font-size: 1em;
 }
 
@@ -146,7 +146,7 @@
   }
 
   .article-headline {
-    font-size: 1.4em;
+    font-size: 1.5em;
     width: 95%;
   }
 
@@ -157,14 +157,19 @@
 
   .nyt-sections {
     width: 90%;
+    font-size: 0.9em;
   }
 
-  .date-section {
+  .byline {
     font-size: 1.1em;
   }
 
+  .date-section {
+    font-size: 1em;
+  }
+
   .article-abstract {
-    font-size: 1.3em;
+    font-size: 1.1em;
     width: 90%;
   }
 
@@ -225,7 +230,7 @@
   }
 
   .article-abstract {
-    font-size: 0.8em;
+    font-size: 0.7em;
     width: 90%;
   }
 
