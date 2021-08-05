@@ -48,23 +48,23 @@ const App = () => {
   const filterStories = (results) => {
     const stories = [];
     for (let i = 0; i < 12; i++) {
-        const story = {
-          id: i,
-          title: results[i]?.title,
-          abstract: results[i]?.abstract,
-          published_date: results[i]?.published_date,
-          updated_date: results[i]?.updated_date,
-          url: results[i]?.url,
-          byline: results[i]?.byline,
-          locations: results[i]?.geo_facet,
-          topics: results[i]?.des_facet,
-          section: results[i]?.section,
-          subsection: results[i]?.subsection,
-          image: results[i]?.multimedia?.[0]?.url
-        }
-        if (story.title) {
-          stories.push(story);
-        }
+      const story = {
+        id: i,
+        title: results[i]?.title,
+        abstract: results[i]?.abstract,
+        published_date: results[i]?.published_date,
+        updated_date: results[i]?.updated_date,
+        url: results[i]?.url,
+        byline: results[i]?.byline,
+        locations: results[i]?.geo_facet,
+        topics: results[i]?.des_facet,
+        section: results[i]?.section,
+        subsection: results[i]?.subsection,
+        image: results[i]?.multimedia?.[0]?.url
+      }
+      if (story.title) {
+        stories.push(story);
+      }
     }
 
     if (stories) {
@@ -97,8 +97,7 @@ const App = () => {
             </NavLink>
           </div>
         </header>
-        <Route exact path='/article/:id' render={ ({ match }) => displaySelected(match) }></Route>
-        <Route path='/'>
+        <Route exact path='/'>
           <MainView
             section={section}
             setSection={setSection}
@@ -108,6 +107,7 @@ const App = () => {
             error={error}
           />
         </Route>
+        <Route exact path='/article/:id' render={ ({ match }) => displaySelected(match) }></Route>
       </div>
     </Router>
   );
