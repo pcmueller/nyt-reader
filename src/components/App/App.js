@@ -6,7 +6,7 @@ import DetailsView from '../DetailsView/DetailsView';
 
 const App = () => {
 
-  const [ section, setSection ] = useState('main');
+  const [ section, setSection ] = useState('home');
   const [ topStories, setTopStories ] = useState(null);
   const [ selectedID, setSelectedID ] = useState(-1);
   const [ selectedStory, setSelectedStory ] = useState(null);
@@ -60,7 +60,7 @@ const App = () => {
           topics: results[i]?.des_facet,
           section: results[i]?.section,
           subsection: results[i]?.subsection,
-          image: results[i]?.multimedia[0].url
+          image: results[i]?.multimedia?.[0]?.url
         }
         if (story.title) {
           stories.push(story);
