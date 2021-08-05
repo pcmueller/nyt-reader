@@ -1,9 +1,9 @@
 # NYT Article Reader
 
-_An application to retrieve, filter, and display New York Times "Top Stories" by section._
+_An application to retrieve, filter, and display the New York Times "Top Stories" by section._
 
 ## Features
-- Thorough project-planning using a GitHub Project Board as well as wireframes and a component-tree mapped in advance.
+- Thorough project-planning using a GitHub Project Board as well as wireframes and a component-tree, illustrated in advance.
 - Modular React component structure with thorough error-handling and conditional rendering.
 - Dynamic page-routing and URL-setting using Router.
 - Dynaming, RESTful data fetching from the NYT Top Stories API.
