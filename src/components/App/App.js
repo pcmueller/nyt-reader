@@ -97,7 +97,8 @@ const App = () => {
             </NavLink>
           </div>
         </header>
-        <Route exact path='/'>
+        <Route exact path='/article/:id' render={ ({ match }) => displaySelected(match) }></Route>
+        <Route path='/'>
           <MainView
             section={section}
             setSection={setSection}
@@ -107,7 +108,6 @@ const App = () => {
             error={error}
           />
         </Route>
-        <Route exact path='/article/:id' render={ ({ match }) => displaySelected(match) }></Route>
       </div>
     </Router>
   );
