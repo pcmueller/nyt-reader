@@ -22,7 +22,7 @@ _An application to retrieve, filter, and display the New York Times "Top Stories
 
 ## Installation
 
-* To view the application on your local device:
+To view the application on your local device:
 
 1. Clone down this repository
 2. Navigate into cloned repository
