@@ -6,10 +6,11 @@ import DetailsView from '../DetailsView/DetailsView';
 
 const App = () => {
 
-  const [ section, setSection ] = useState('us');
+  const [ section, setSection ] = useState('main');
   const [ topStories, setTopStories ] = useState(null);
   const [ selectedID, setSelectedID ] = useState(-1);
   const [ selectedStory, setSelectedStory ] = useState(null);
+  const [ error, setError ] = useState('');
 
   useEffect(() => {
     if (!topStories) {
@@ -39,6 +40,7 @@ const App = () => {
         }
       })
       .catch(error => {
+        setError('Sorry, we\'re unable to load the page at the moment.');
         console.log(error);
     })
   }
@@ -102,6 +104,7 @@ const App = () => {
             topStories={topStories}
             setTopStories={setTopStories}
             setSelectedID={setSelectedID}
+            error={error}
           />
         </Route>
         <Route exact path='/article/:id' render={ ({ match }) => displaySelected(match) }></Route>

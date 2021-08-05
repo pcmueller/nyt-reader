@@ -12,6 +12,7 @@ export const fetchAllStories = async (section) => {
 
 const handleErrors = (response) => {
   if (!response.ok) {
+    console.log(response);
     throw new Error()
   }
 }
