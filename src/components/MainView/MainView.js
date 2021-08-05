@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import List from '../List/List';
 import nytSections from '../../assets/nytSections';
 
-const MainView = ({ section, setSection, topStories, setSelectedID }) => {
+const MainView = ({ section, setSection, topStories, setSelectedID, error }) => {
 
   const [ options, setOptions ] = useState([]);
 
@@ -43,7 +43,8 @@ const MainView = ({ section, setSection, topStories, setSelectedID }) => {
       </div>
       </nav>
       <section className='stories-container'>
-        {!topStories && <p className='loading'>Loading...</p>}
+        {error.length > 0 && <p className='loading'>{error}</p>}
+        {!topStories && !error && <p className='loading'>Loading...</p>}
         {topStories && <List section={section} stories={topStories} setSelectedID={setSelectedID} />}
       </section>
     </main>

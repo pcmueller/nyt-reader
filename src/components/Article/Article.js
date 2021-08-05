@@ -27,9 +27,13 @@ const Article = ({ id, setSelectedID, story }) => {
     const [ y, m, d ] = date.split('-');
     const [ , monthNum] = m.split('0');
     const [ , dayNum] = d.split('0');
-    const formatted = `${months[monthNum]} ${dayNum}, ${y}`;
-
-    setDate(formatted);
+    if (dayNum) {
+      const formatted = `${months[monthNum]} ${dayNum}, ${y}`;
+      setDate(formatted);
+    } else {
+      const formatted = `${months[monthNum]} ${y}`;
+      setDate(formatted);
+    }
   };
 
   const splitTags = () => {

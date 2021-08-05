@@ -54,7 +54,7 @@ const List = ({ section, stories, setSelectedID }) => {
   if (storyCards.length === 0) {
     return (
       <section className='top-stories-list'>
-        <div className='loading-box'>
+        <div className='message-box'>
           <p className='loading'>Loading...</p>
         </div>
       </section>
@@ -64,7 +64,8 @@ const List = ({ section, stories, setSelectedID }) => {
   return (
     <section className='top-stories-list'>
       <div className='list-heading'>
-        <h2>Top Stories in {sectionTitle}</h2>
+        {section === 'home' && <h2>Top Stories</h2>}
+        {section !=='home' && <h2>Top Stories in {sectionTitle}</h2>}
       </div>
       {storyCards}
     </section>
